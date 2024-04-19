@@ -30,7 +30,7 @@ def main():
     parser.add_argument('--batch_size',type=int,default=32)
     parser.add_argument('--lr',type=float,default=1e-01)
     parser.add_argument('--step',type=int,default =1000)
-    parser.add_argument('--rounds',type=int,default =60)
+    parser.add_argument('--rounds',type=int,default=60)
     parser.add_argument('--warmup_rounds',type=int,default=2)
     parser.add_argument('--init_cost',type=float,default=1e-03)
     parser.add_argument('--patience',type=int,default=5)
@@ -44,7 +44,7 @@ def main():
     parser.add_argument('--early_stop_patience',type=int,default= 10)
     parser.add_argument('--epsilon_for_bandits',type=float,default = 0.3)
     parser.add_argument('--reset_cost_to_zero',type=bool,default=True)
-    parser.add_argument('--single_color_opt',type=bool,default=True) 
+    parser.add_argument('--single_color_opt',type=bool,default=True)
     parser.add_argument('--gamma',type=float,default=0.25,help='gamma for pre-screening') 
     parser.add_argument('--beta',type=float,default=1e+4,help='beta in the objective function') 
     parser.add_argument('--global_theta',type=float,default=0.95,help='theta for global trigger pre-screening') 
@@ -95,9 +95,9 @@ def main():
             print('='*40 + ' Symmetric Check ' + '='*40)
             sym_l1_norm,_,_,_,_ = K_Arm_Opt(args,sym_target_class,sym_victim_class,trigger_type,model,'backward')
         else:
-            sym_l1_norm = None 
+            sym_l1_norm = None
         
-        trojan = trojan_det(args,trigger_type,l1_norm,sym_l1_norm)
+        trojan = trojan_det(args, trigger_type,l1_norm, sym_l1_norm)
     
 
     end_time = time.time()

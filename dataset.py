@@ -8,7 +8,7 @@ from natsort import natsorted
 #define custom dataset for TrojAI competition
 
 class CustomDataSet(Dataset):
-    def __init__(self, main_dir, transform,triggered_classes,label_specific=False):
+    def __init__(self, main_dir, transform, triggered_classes, label_specific=False):
         self.main_dir = main_dir
         self.transform = transform
         all_imgs = os.listdir(main_dir)
