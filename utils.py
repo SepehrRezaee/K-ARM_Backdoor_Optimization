@@ -19,11 +19,14 @@ def print_args(opt):
 def loading_models(args):
     device = torch.device("cuda:%d" % args.device)
 
-    model = models.resnet18(pretrained=False)
-    
-    state_dict = torch.load(args.model_filepath)
-    
-    model.load_state_dict(state_dict)['model']
+    model = models.resnet18(pretrained=False)  # Change to the correct ResNet variant if not ResNet18
+
+    num_features = model.fc.in_features
+    model.fc = nn.Linear(num_features, 10)
+
+    state_dict = torch.load(model_filargs.model_filepathepath)['model']
+    model.load_state_dict(state_dict)
+
     model.to(device)
     model.eval()
     sample_input = torch.zeros(1,args.channels,args.input_width,args.input_height).to(device)
