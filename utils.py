@@ -25,7 +25,7 @@ def loading_models(args):
     num_features = model.fc.in_features
     model.fc = nn.Linear(num_features, 10)
 
-    state_dict = torch.load(model_filargs.model_filepathepath)['model']
+    state_dict = torch.load(args.model_filepath)['model']
     model.load_state_dict(state_dict)
 
     model.to(device)
