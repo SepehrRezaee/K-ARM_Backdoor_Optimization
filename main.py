@@ -41,7 +41,7 @@ def main():
     parser.add_argument('--patience',type=int,default=5)
     parser.add_argument('--cost_multiplier',type=float,default=1.5)
     parser.add_argument('--epsilon',type=float,default=1e-07)
-    parser.add_argument('--num_classes',type=int,default=0)
+    parser.add_argument('--num_classes',type=int,default=10)
     parser.add_argument('--regularization',type=str,default='l1')
     parser.add_argument('--attack_succ_threshold',type=float,default=0.99)
     parser.add_argument('--early_stop',type=bool,default=False)
