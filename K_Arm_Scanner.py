@@ -27,7 +27,8 @@ class K_Arm_Scanner:
 
         
         #K-arms bandits
-        self.device = torch.device("cuda:%d" % args.device)
+        # self.device = torch.device("cuda:%d" % args.device)
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.epsilon = args.epsilon
         self.epsilon_for_bandits = args.epsilon_for_bandits
         self.beta = args.beta
