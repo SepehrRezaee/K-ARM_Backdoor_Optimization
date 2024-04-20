@@ -4,8 +4,11 @@ import random
 import argparse
 import time 
 from utils import *
-from .Arm_Pre_Screening import Pre_Screening
-from .K_Arm_Opt import K_Arm_Opt
+
+sys.path.append('/kaggle/working/K-ARM_Backdoor_Optimization')
+
+from Arm_Pre_Screening import Pre_Screening
+from K_Arm_Opt import K_Arm_Opt
 
 # set random seed
 SEED = 333
