@@ -18,9 +18,11 @@ def print_args(opt):
 
 # load model on device, get number of classes
 def loading_models(args):
-    device = torch.device("cuda:%d" % args.device)
+    # device = torch.device("cuda:%d" % args.device)
 
-    model = models.resnet18(pretrained=False)  # Change to the correct ResNet variant if not ResNet18
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    model = models.resnet18(pretrained=False)
 
     num_features = model.fc.in_features
     model.fc = nn.Linear(num_features, 10)
