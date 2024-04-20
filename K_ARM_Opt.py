@@ -23,7 +23,7 @@ from K_Arm_Scanner import *
 
 def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,direction):
 
-    device = torch.device("cuda:%d" % args.device)
+    device = "cuda" if torch.cuda.is_available() else "cpu"
     transform = transforms.Compose([
         transforms.CenterCrop(args.input_width),
         transforms.ToTensor()
