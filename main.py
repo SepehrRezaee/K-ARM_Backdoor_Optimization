@@ -29,8 +29,8 @@ def main():
 
     parser = argparse.ArgumentParser(description='PyTorch K-ARM Backdoor Optimization')
     parser.add_argument('--device',type=int,default=0)
-    parser.add_argument('--input_width',type=int,default=224)
-    parser.add_argument('--input_height',type=int,default=224)
+    parser.add_argument('--input_width',type=int,default=32)
+    parser.add_argument('--input_height',type=int,default=32)
     parser.add_argument('--channels',type=int,default=3)
     parser.add_argument('--batch_size',type=int,default=32)
     parser.add_argument('--lr',type=float,default=1e-01)
