@@ -137,10 +137,10 @@ def specific_label_trigger_det(args,topk_index,topk_logit):
         #         tmp_2[j] = tmp_1[tmp_1 == j].size(0) / tmp_1.size(0)
         for j in range(len(some_range)):  # Replace some_range with the appropriate range
         # Make sure tmp_1 is not empty and has a non-zero size before dividing
-        if tmp_1.size(0) > 0:
-            tmp_2[j] = tmp_1[tmp_1 == j].size(0) / tmp_1.size(0)
-        else:
-            tmp_2[j] = 0
+            if tmp_1.size(0) > 0:
+                tmp_2[j] = tmp_1[tmp_1 == j].size(0) / tmp_1.size(0)
+            else:
+                tmp_2[j] = 0
                 #if tmp_2[j]  == 1:
                 if tmp_2[j]  >= args.local_theta:
                     
