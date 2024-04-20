@@ -88,7 +88,7 @@ def main():
     else:
 
         print('='*40 + ' K-ARM Optimization ' + '='*40)
-        l1_norm,mask,target_class,victim_class,opt_times = K_Arm_Opt(args,target_classes,victim_classes,trigger_type,model,'forward')
+        l1_norm, mask, target_class, victim_class, opt_times = K_Arm_Opt(args,target_classes,victim_classes,trigger_type,model,'forward')
         print(f'Target Class: {target_class} Victim Class: {victim_class} Trigger Size: {l1_norm} Optimization Steps: {opt_times}')
         if args.sym_check and trigger_type == 'polygon_specific':
             args.step = opt_times
@@ -102,7 +102,7 @@ def main():
         else:
             sym_l1_norm = None
         
-        trojan = trojan_det(args, trigger_type,l1_norm, sym_l1_norm)
+        trojan = trojan_det(args, trigger_type, l1_norm, sym_l1_norm)
     
 
     end_time = time.time()
