@@ -110,6 +110,24 @@ class K_Arm_Scanner:
 
 
 
+        # Default values to return in case of an error
+        default_best_pattern = [None] * self.num_classes
+        default_best_mask = [None] * self.num_classes
+        default_best_reg = [1e+10] * self.num_classes
+        default_total_times = [0] * self.num_classes
+
+        # Check if target_classes_all is empty
+        if not target_classes_all:
+            print("Error: target_classes_all is empty.")
+            return default_best_pattern, default_best_mask, default_best_reg, default_total_times
+
+        if y_target_index >= len(target_classes_all):
+            print(f"Error: y_target_index {y_target_index} is out of range for target_classes_all with length {len(target_classes_all)}")
+            return default_best_pattern, default_best_mask, default_best_reg, default_total_times
+    
+
+
+
         log = []
         cost_set_counter = [0] * self.num_classes
         cost_down_counter = [0] * self.num_classes
@@ -351,4 +369,4 @@ class K_Arm_Scanner:
             #print('L1 down speed:',reg_down_vel)
             #print('second loss item:',(1e+4 / torch.Tensor(avg_loss_reg)))
             #print('-----')
-        return best_pattern, best_mask,best_reg,total_times
+        return best_pattern, best_mask, best_reg, total_times
