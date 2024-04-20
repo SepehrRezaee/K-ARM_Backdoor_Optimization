@@ -130,7 +130,15 @@ class K_Arm_Scanner:
         times = [0] * self.num_classes
         total_times = [0] * self.num_classes
         first_best_reg = [1e+10] * self.num_classes
-        y_target_tensor = torch.Tensor([target_classes_all[y_target_index]]).long().to(self.device)
+        
+        if y_target_index >= len(target_classes_all):
+            
+            print(f"Error: y_target_index {y_target_index} is out of range for target_classes_all with length {len(target_classes_all)}")
+            
+            return
+        else:
+            y_target_tensor = torch.Tensor([target_classes_all[y_target_index]]).long().to(self.device)
+
         
         optimizer_list = []
 
