@@ -5,6 +5,9 @@
 ### If a potential label specific trigger is found, it will return the target-victim label pair                            ###
 ##############################################################################################################################
 
+import sys
+
+sys.path.append('/kaggle/working/K-ARM_Backdoor_Optimization')
 
 import torch 
 from torchvision import transforms

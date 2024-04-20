@@ -4,11 +4,13 @@
 ### It returns the target-victim pair and corresponding pattern, mask and l1 norm of the mask                                        ###
 ########################################################################################################################################
 
-
-
-
 import torch 
 from torchvision import transforms
+
+import sys
+
+sys.path.append('/kaggle/working/K-ARM_Backdoor_Optimization')
+
 from dataset import CustomDataSet
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
