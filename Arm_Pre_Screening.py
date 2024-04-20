@@ -28,6 +28,8 @@ def Pre_Screening(args,model):
     dataset = CustomDataSet(args.examples_dirpath,transform=transform,triggered_classes =[])
     data_loader = DataLoader(dataset=dataset,batch_size = args.batch_size,shuffle=True,drop_last=False,num_workers=2,pin_memory=True)
     acc = 0
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
     for idx, (img,name,label) in enumerate(data_loader):
         img,label = img.to(device),label.to(device)
         #img = img[:,permute,:,:]
