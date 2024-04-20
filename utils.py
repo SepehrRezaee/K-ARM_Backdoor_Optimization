@@ -1,6 +1,7 @@
 # define supporting functions
 
 import torch 
+import torch.nn as nn
 import torchvision.models as models
 
 # print configurations
@@ -121,7 +122,3 @@ def trojan_det(args,trigger_type,l1_norm,sym_l1_norm):
         
         else:
             return 'benign'
-
-
-
-
