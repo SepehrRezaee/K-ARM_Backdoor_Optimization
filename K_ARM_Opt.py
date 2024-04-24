@@ -35,6 +35,7 @@ def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,d
         data_set = CustomDataSet(args.examples_dirpath,transform=transform,triggered_classes=triggered_classes_all)
         data_loader = DataLoader(dataset=data_set,batch_size = args.batch_size,shuffle=False,drop_last=False,num_workers=8,pin_memory=True)
         data_loader_arr.append(data_loader)
+        print("triggered_classes_all is None")
     
     else:
         for i in range(len(target_classes_all)):
