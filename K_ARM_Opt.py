@@ -11,6 +11,8 @@ import sys
 
 sys.path.append('/kaggle/working/K-ARM_Backdoor_Optimization')
 
+import random
+
 from dataset import CustomDataSet
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
@@ -103,13 +105,13 @@ def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,d
     print(total_times[index])
     '''
     
-
+    print("index": index)
     if triggered_classes_all is None:
         target_class =  target_classes_all[index]
         triggered_class = 'all'
 
     else:
-        print(target_classes_all)
+        
         target_class = target_classes_all[index]
         triggered_class = triggered_classes_all[index]
 

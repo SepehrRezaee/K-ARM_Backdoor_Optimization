@@ -93,7 +93,8 @@ def Pre_Screening(args, model):
                     
                     target_class_all.append(target_class)
                     triggered_classes_all.append(triggered_classes)
-        
+
+
         return target_class_all, triggered_classes_all
 
 
