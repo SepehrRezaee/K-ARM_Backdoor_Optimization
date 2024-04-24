@@ -108,6 +108,7 @@ def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,d
         triggered_class = 'all'
 
     else:
+        print(target_classes_all)
         target_class = target_classes_all[index]
         triggered_class = triggered_classes_all[index]
 
