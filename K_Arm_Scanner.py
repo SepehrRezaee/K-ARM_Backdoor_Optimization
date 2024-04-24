@@ -180,7 +180,7 @@ class K_Arm_Scanner:
             try:
                 total_times[y_target_index] += 1
             except IndexError as e:
-                total_times[-1] += 1
+                total_times[0] += 1
             
 
 
