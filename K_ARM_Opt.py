@@ -105,7 +105,7 @@ def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,d
     print(total_times[index])
     '''
     
-    print("index": index)
+    print("index:", index)
     if triggered_classes_all is None:
         target_class =  target_classes_all[index]
         triggered_class = 'all'
