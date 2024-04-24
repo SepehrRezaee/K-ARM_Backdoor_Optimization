@@ -22,8 +22,8 @@ class CustomDataSet(Dataset):
                 tmp_img = copy_imgs[i]
                 print(tmp_img)
                 if type(triggered_classes) != type([]):
-                    triggered_classes = list(triggered_classes)
-                if int(tmp_img.split('_')[-3]) not in list(triggered_classes):
+                    list_triggered_clss = [triggered_classes]
+                if int(tmp_img.split('_')[-3]) not in list_triggered_clss:
                     all_imgs.remove(tmp_img)
 
             # small num test
