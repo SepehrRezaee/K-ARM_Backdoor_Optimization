@@ -19,11 +19,15 @@ import torch.nn.functional as F
 import numpy as np
 from K_Arm_Scanner import *
 
-
+import pandas as pd
 
 
 
 def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,direction):
+
+    df = pd.read_csv("/kaggle/working/examples_2/data.csv")
+    target_class_all1 = df["target_labe"]
+    triggered_classes_all1 = df[df["trigger"] == True]["true_label"]
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     transform = transforms.Compose([
@@ -104,7 +108,7 @@ def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,d
     print(mask[index])
     print(total_times[index])
     '''
-    index = random.randint(0, 20)
+    index = random.randint(0, len(target_class_all1))
     print("index:", index)
     if triggered_classes_all is None:
         target_class =  target_classes_all[index]
