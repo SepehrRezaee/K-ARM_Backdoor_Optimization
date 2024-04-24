@@ -70,6 +70,7 @@ def main():
     print_args(args)
     start_time = time.time()
     model, num_classes = loading_models(args)
+    print(f'model, num_classes: {model}, {num_classes}')
     args.num_classes = num_classes
 
     print('='*41 + ' Arm Pre-Screening ' + '='*40)

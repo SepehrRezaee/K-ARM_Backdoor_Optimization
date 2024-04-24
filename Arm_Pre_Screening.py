@@ -18,7 +18,7 @@ import numpy as np
 
 
 
-def Pre_Screening(args,model):
+def Pre_Screening(args, model):
     device = torch.device('cuda:%d'%args.device)
     transform = transforms.Compose([
         transforms.CenterCrop(args.input_width),
@@ -97,7 +97,7 @@ def Pre_Screening(args,model):
 
 
 
-def all_label_trigger_det(args,topk_index):
+def all_label_trigger_det(args, topk_index):
 
     target_label = -1
     count_all = torch.zeros(args.num_classes)
