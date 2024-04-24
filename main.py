@@ -75,7 +75,8 @@ def main():
     print('='*41 + ' Arm Pre-Screening ' + '='*40)
 
 
-    raw_target_classes, raw_victim_classes =  Pre_Screening(args,model)
+    raw_target_classes, raw_victim_classes = Pre_Screening(args,model)
+    print(raw_target_classes, raw_victim_classes)
     target_classes,victim_classes,num_classes,trigger_type = identify_trigger_type(raw_target_classes,raw_victim_classes)
 
     print(f'target_classes, victim_classes, num_classes, trigger_type: {target_classes},{victim_classes},{num_classes},{trigger_type}')
