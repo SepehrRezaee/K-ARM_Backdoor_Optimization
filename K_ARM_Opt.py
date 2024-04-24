@@ -109,9 +109,9 @@ def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,d
     print(mask[index])
     print(total_times[index])
     '''
-    index = random.randint(0, len(target_class_all1))
-    print("index:", index)
-    print("target_classes_all", target_classes_all)
+    # index = random.randint(0, len(target_class_all1))
+    # print("index:", index)
+    # print("target_classes_all", target_classes_all)
     if triggered_classes_all is None:
         target_class =  target_classes_all[index]
         triggered_class = 'all'
