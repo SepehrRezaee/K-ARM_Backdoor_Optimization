@@ -123,10 +123,13 @@ def main():
                 
                 else:
                     f.write(f'Model: {args.model_filepath} Trojan: {trojan} Trigger Type: {trigger_type} Victim Class: {victim_class} Target Class: {target_class} Trigger Size: {l1_norm} Ratio: {sym_l1_norm/l1_norm} Time Cost: {time_cost} Description: Trigger size is smaller (larger) than ratio bound \n')
+    
+    return l1_norm
                 
 
                     
 
 
 if __name__ == '__main__':
-    main()
+    l1_norm = main()
+    print(l1_norm)
