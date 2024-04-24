@@ -25,10 +25,10 @@ import pandas as pd
 
 def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,direction):
 
-    if os.path.exists("/kaggle/working/examples_2/data.csv"):
-        df = pd.read_csv("/kaggle/working/examples_2/data.csv")
-        target_class_all = df["target_labe"]
-        triggered_classes_all = df[df["trigger"] == True]["true_label"]
+    # if os.path.exists("/kaggle/working/examples_2/data.csv"):
+    df = pd.read_csv("/kaggle/working/examples_2/data.csv")
+    target_class_all = df["target_labe"]
+    triggered_classes_all = df[df["trigger"] == True]["true_label"]
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     transform = transforms.Compose([
