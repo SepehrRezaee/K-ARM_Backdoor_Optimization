@@ -10,11 +10,11 @@ class K_Arm_Scanner:
     def __init__ (self,model,args):
         self.model = model
         self.regularization = args.regularization
-        self.init_cost = [args.init_cost] * args.num_classes
+        self.init_cost = [args.init_cost] * 10
         self.steps = args.step
         self.round = args.rounds
         self.lr = args.lr
-        self.num_classes = args.num_classes
+        self.num_classes = 10
         self.attack_succ_threshold = args.attack_succ_threshold
         self.patience = args.patience
         self.channels = args.channels
