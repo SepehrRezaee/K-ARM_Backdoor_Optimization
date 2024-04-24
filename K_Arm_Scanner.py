@@ -175,7 +175,13 @@ class K_Arm_Scanner:
         for step in pbar:
 
             y_target_tensor = torch.Tensor([target_classes_all[y_target_index]]).long().to(self.device)
-            total_times[y_target_index] += 1
+            print("y_target_index", y_target_index)
+            print("total_times", total_times)
+            try:
+                total_times[y_target_index] += 1
+            except IndexError as e:
+                total_times[-1] += 1
+            
 
 
             loss_ce_list = []
