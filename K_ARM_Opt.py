@@ -27,8 +27,8 @@ def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,d
 
     # if os.path.exists("/kaggle/working/examples_2/data.csv"):
     df = pd.read_csv("/kaggle/working/examples_2/data.csv")
-    target_class_all = df["target_labe"]
-    triggered_classes_all = df[df["trigger"] == True]["true_label"]
+    target_class_all = list(df["target_labe"])
+    triggered_classes_all = list(df[df["trigger"] == True]["true_label"])
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     transform = transforms.Compose([
@@ -117,7 +117,6 @@ def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,d
         triggered_class = 'all'
 
     else:
-        
         target_class = target_classes_all[index]
         triggered_class = triggered_classes_all[index]
 

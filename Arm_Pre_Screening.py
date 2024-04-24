@@ -29,8 +29,8 @@ def Pre_Screening(args, model):
 
     if os.path.exists("/kaggle/working/examples_2/data.csv"):
         df = pd.read_csv("/kaggle/working/examples_2/data.csv")
-        target_class_all = df["target_labe"]
-        triggered_classes_all = df[df["trigger"] == True]["true_label"]
+        target_class_all = list(df["target_labe"])
+        triggered_classes_all = list(df[df["trigger"] == True]["true_label"])
 
     dataset = CustomDataSet(args.examples_dirpath,transform=transform,triggered_classes =[])
     data_loader = DataLoader(dataset=dataset,batch_size = args.batch_size,shuffle=True,drop_last=False,num_workers=2,pin_memory=True)
