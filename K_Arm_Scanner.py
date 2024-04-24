@@ -146,7 +146,7 @@ class K_Arm_Scanner:
         avg_loss_acc = [1e+10] * self.num_classes
         reg_down_vel = [-1e+10] * self.num_classes
         times = [0] * self.num_classes
-        total_times = [0] * self.num_classes
+        total_times = [0] * 10
         first_best_reg = [1e+10] * self.num_classes
         
         if y_target_index >= len(target_classes_all):
@@ -180,7 +180,7 @@ class K_Arm_Scanner:
             try:
                 total_times[y_target_index] += 1
             except IndexError as e:
-                total_times[0] += 1
+                total_times[-1] += 1
             
 
 
