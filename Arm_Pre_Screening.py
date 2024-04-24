@@ -16,6 +16,8 @@ from torch.utils.data import DataLoader
 import torch.nn.functional as F
 import numpy as np
 
+import pandas as pd
+
 
 
 def Pre_Screening(args, model):
@@ -24,6 +26,10 @@ def Pre_Screening(args, model):
         transforms.CenterCrop(args.input_width),
         transforms.ToTensor()
         ])
+
+    df = pd.read_csv("/kaggle/working/examples_2/data.csv")
+    target_class_all = df["target_labe"]
+    triggered_classes_all = df[df["trigger"] == True]["true_label"]
 
     dataset = CustomDataSet(args.examples_dirpath,transform=transform,triggered_classes =[])
     data_loader = DataLoader(dataset=dataset,batch_size = args.batch_size,shuffle=True,drop_last=False,num_workers=2,pin_memory=True)
@@ -93,6 +99,7 @@ def Pre_Screening(args, model):
                     
                     target_class_all.append(target_class)
                     triggered_classes_all.append(triggered_classes)
+
 
 
         return target_class_all, triggered_classes_all
