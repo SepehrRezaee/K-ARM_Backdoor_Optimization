@@ -20,6 +20,7 @@ class CustomDataSet(Dataset):
             copy_imgs = all_imgs.copy()
             for i in range(dataset_size):
                 tmp_img = copy_imgs[i]
+                print(tmp_img)
                 if int(tmp_img.split('_')[-3]) not in triggered_classes:
                     all_imgs.remove(tmp_img)
 
