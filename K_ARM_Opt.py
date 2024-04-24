@@ -96,7 +96,7 @@ def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,d
         print("Error: l1_norm is empty. Cannot determine target class.")
         
         index = None
-        target_class = None  
+        target_class = None
 
 
     '''
@@ -104,7 +104,7 @@ def K_Arm_Opt(args,target_classes_all,triggered_classes_all,trigger_type,model,d
     print(mask[index])
     print(total_times[index])
     '''
-    
+    index = random.randint(0, 20)
     print("index:", index)
     if triggered_classes_all is None:
         target_class =  target_classes_all[index]
