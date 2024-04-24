@@ -52,6 +52,8 @@ def Pre_Screening(args, model):
         k = round(args.num_classes * args.gamma)
 
     topk_index = torch.topk(logits_all,k,dim=1)[1]
+    print("logits_all", logits_all)
+    print("topk_index", topk_index)
     topk_logit = torch.topk(logits_all,k,dim=1)[0]
 
 
