@@ -77,6 +77,8 @@ def main():
 
     raw_target_classes, raw_victim_classes =  Pre_Screening(args,model)
     target_classes,victim_classes,num_classes,trigger_type = identify_trigger_type(raw_target_classes,raw_victim_classes)
+
+    print(f'target_classes, victim_classes, num_classes, trigger_type: {target_classes},{victim_classes},{num_classes},{trigger_type}')
     args.num_classes = num_classes
 
     if trigger_type == 'benign':
