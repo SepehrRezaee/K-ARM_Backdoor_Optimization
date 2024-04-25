@@ -98,8 +98,11 @@ def main():
             args.step = opt_times
             args.num_classes = 1
             tmp = target_class
-            print(victim_class)
-            sym_target_class = [victim_class.item()]
+            # print(victim_class)
+            if type(victim_class) == type(9):
+                sym_target_class = [victim_class]
+            else:
+                sym_target_class = [victim_class.item()]
             sym_victim_class = torch.IntTensor([tmp])
 
             print('='*40 + ' Symmetric Check ' + '='*40)
