@@ -98,6 +98,7 @@ def main():
             args.step = opt_times
             args.num_classes = 1
             tmp = target_class
+            print(victim_class)
             sym_target_class = [victim_class.item()]
             sym_victim_class = torch.IntTensor([tmp])
 
